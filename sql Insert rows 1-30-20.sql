@@ -18,4 +18,4 @@
 --select top 2 * from orders	
 	--order by id desc
 Select* 
-	From Orders
+	From Users

@@ -1,0 +1,13 @@
+--Alter table Students
+	--Alter column loan decimal(8,2) not null;
+--Update students set
+	 --loan = 0
+	 --where loan is null
+--select* from students
+--Alter table students --same change with a constraint--
+--add constraint df_loan default 0 for loan;
+--Alter table cohort 
+	--Add note nvarchar(80) not null;
+
+--Alter table Cohort 
+--drop column note;
