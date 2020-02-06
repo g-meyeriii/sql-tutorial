@@ -10,7 +10,7 @@ BEGIN
 
 	Select @RequestId = Id from Requests where Description = @RequestDescription;
 
-	Select @ProductId =Id from Products where PartNbr = @ProductPartNbr;
+	Select @ProductId = Id from Products where PartNbr = @ProductPartNbr;
 
 	INSERT into RequestLines (RequestId, ProductId, Quantity)
 				Values (@RequestId, @ProductId, @Quantity);

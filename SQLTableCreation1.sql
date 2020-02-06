@@ -1,8 +1,8 @@
 use master;
 go
-drop database if exists Capstone
+drop database if exists Capstone;
 go
-create database Capstone
+create database Capstone;
 go
 use Capstone;
 Create Table Users ( 
@@ -20,10 +20,9 @@ Go
 Insert into Users (Username, Password,Firstname,Lastname,Phone,Email,IsReviewer,IsAdmin)
 	values ('sa','sa', 'Dave','Smith','513-555-1212','abc@hotmail.com',1,1)
 Insert into Users (Username, Password,Firstname,Lastname,Phone,Email,IsReviewer,IsAdmin)
-	values('va','va', 'Bill','Smith','513-555-1313','abc@aol.com')
+	values('va','va', 'Bill','Smith','513-555-1313','abc@aol.com',0,0)
 Insert into Users (Username, Password,Firstname,Lastname,Phone,Email,IsReviewer,IsAdmin)
 	values('ca','ca','Joe','Smith','513-555-1414','abc@gmail.com',1,0)
-
 
 Create Table Vendors(
 	Id int primary key not null identity(1,1),
@@ -86,11 +85,17 @@ Create Table RequesLines (
 	Quantity int not null default 1
 );
 go
---Insert for Requests
+--Insert Requests
 insert into Requests (Description, Justification,UserId)
-	Values ('First Request 123','Work related',(select Id from Users(Id)
-
+	Values ('Area Rug','Work related',(select Id from Users where  Username = 'sa'))
+insert into Requests (Description, Justification,UserId)
+	Values('Almond Milk','Work coffe area',(select Id from Users where Username = 'ca'))
 --Insert for Request Lines
 
-select* from Users
+--select* from Users nothing below this was run into the database
+-- into RequestLines (Quantity)
+	--Values (2)
 
+--Select* from RequestLines rl
+		--Join Requests 
+			--on rl.Id = RequestId

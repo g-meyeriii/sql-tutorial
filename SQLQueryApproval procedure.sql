@@ -1,5 +1,5 @@
 Procedure SetRequestStatus
-	@RequestId int,
+	@RequestId int, --parameter a value that we are feeding to the procedure
 	@IsApproved bit = 1
 
 AS
